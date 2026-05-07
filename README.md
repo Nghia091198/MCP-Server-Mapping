@@ -171,6 +171,16 @@ list_projects
 
 **Yêu cầu:** Node.js đã cài trên máy.
 
+#### 1.1 Install node
+
+Chạy lệnh
+
+```json
+npm install
+```
+
+#### 1.2 Config MCP của Claude
+
 Thêm vào file config MCP của Claude (thường ở `claude_desktop_config.json`):
 
 ```json
