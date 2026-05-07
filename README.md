@@ -7,8 +7,8 @@ Tài liệu này mô tả các MCP (Model Context Protocol) tool đang được 
 ## Mục lục
 
 1. [Tổng quan](#tổng-quan)
-2. [file-tools](#1-file-tools)
-3. [Cách setup](#cách-setup)
+2. [Cách setup](#cách-setup)
+3. [file-tools](#1-file-tools)
 4. [Tips sử dụng](#tips-sử-dụng)
 
 ---
@@ -24,7 +24,46 @@ Hiện tại có **2 MCP server** đang kết nối:
 
 ---
 
-## 1. file-tools
+## Cách setup
+
+### 1. Setup file-tools (MCP server local)
+
+**Yêu cầu:** Node.js đã cài trên máy.
+
+#### 1.1 Install node
+
+Chạy lệnh
+
+```json
+npm install
+```
+
+#### 1.2 Config MCP của Claude
+
+Thêm vào file config MCP của Claude (thường ở `claude_desktop_config.json`):
+
+```json
+{
+  "mcpServers": {
+    "file-tools": {
+      "command": "npx",
+      "args": ["-y", "file-tools-mcp"],
+      "env": {}
+    }
+  }
+}
+```
+**Note:** Nếu file đang có nội dung thì thêm dạng object vào. Không ghi đè
+
+**Vị trí file config:**
+- Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+- macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+
+Sau khi lưu file config, **restart Claude Desktop** để load MCP server mới.
+
+---
+
+## file-tools
 
 Nhóm tool để làm việc với **file hệ thống** và **git** trên máy local.
 
@@ -162,46 +201,6 @@ list_projects
 • project_1 → D:\project_1
 • project_2         → D:\project_1
 ```
-
----
-
-## Cách setup
-
-### 1. Setup file-tools (MCP server local)
-
-**Yêu cầu:** Node.js đã cài trên máy.
-
-#### 1.1 Install node
-
-Chạy lệnh
-
-```json
-npm install
-```
-
-#### 1.2 Config MCP của Claude
-
-Thêm vào file config MCP của Claude (thường ở `claude_desktop_config.json`):
-
-```json
-{
-  "mcpServers": {
-    "file-tools": {
-      "command": "npx",
-      "args": ["-y", "file-tools-mcp"],
-      "env": {}
-    }
-  }
-}
-```
-**Note:** Nếu file đang có nội dung thì thêm dạng object vào. Không ghi đè
-
-**Vị trí file config:**
-- Windows: `%APPDATA%\Claude\claude_desktop_config.json`
-- macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
-
-Sau khi lưu file config, **restart Claude Desktop** để load MCP server mới.
-
 ---
 
 ## Tips sử dụng
