@@ -8,9 +8,8 @@ Tài liệu này mô tả các MCP (Model Context Protocol) tool đang được 
 
 1. [Tổng quan](#tổng-quan)
 2. [file-tools](#1-file-tools)
-3. [Claude in Chrome](#2-claude-in-chrome)
-4. [Cách setup](#cách-setup)
-5. [Tips sử dụng](#tips-sử-dụng)
+3. [Cách setup](#cách-setup)
+4. [Tips sử dụng](#tips-sử-dụng)
 
 ---
 
@@ -195,4 +194,24 @@ Sau khi lưu file config, **restart Claude Desktop** để load MCP server mới
 
 ---
 
+## Tips sử dụng
 
+**Dùng alias thay đường dẫn dài:**
+```
+# Thay vì gõ:
+git_status D:\project_1
+
+# Lưu alias 1 lần:
+set_project project_1 D:\project_1
+
+# Sau đó chỉ cần nhắc "project_1", Claude tự hiểu
+```
+
+**Review code trước khi commit:**
+```
+# Xem tổng quan file nào thay đổi
+git_status D:\project_1
+
+# Xem chi tiết từng file
+git_diff D:\project_1\file.js
+```
